@@ -1,12 +1,21 @@
-\documentclass[serif,mathserif]{beamer}
+\documentclass[serif,mathserif,compress]{beamer}
 \usepackage{amsmath, amsfonts, epsfig, xspace}
 \usepackage{algorithm,algorithmic}
 \usepackage{pstricks,pst-node}
 \usepackage{multimedia}
+\usepackage{listings}
 \usepackage[normal,tight,center]{subfigure}
 \setlength{\subfigcapskip}{-.5em}
 \usepackage{beamerthemesplit}
-\usepackage{../beamerthemelankton-keynote}
+%\usepackage{../beamerthemelankton-keynote}
+%\usetheme{Warsaw}
+%\useoutertheme[subsection=false]{smoothbars}
+\usetheme{Madrid}
+\useoutertheme[footline=authortitle,subsection=true]{miniframes}
+
+\lstset{ %
+basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+}
 
 \author[Joe Rocklin]{Joe Rocklin\\@joerocklin}
 
@@ -20,10 +29,9 @@
 
 \maketitle
 
-% \section{Introduction}  % add these to see outline in slides
+\section{Introduction}  % add these to see outline in slides
 
-\begin{frame}
-  \frametitle{Introduction}
+\begin{frame}{Introduction}
   Joe Rocklin
   \begin{columns}[T]
   \begin{column}[T]{.5\textwidth}
@@ -55,13 +63,13 @@
   \end{itemize}
 \end{frame}
 
-\section{What is Software} % add these to see outline in slides
-
 \begin{frame}{What it Software?}
-  Software is a set of machine-readable instructions which directs a processor to perform specific actions.
+  \begin{block}{Software is...}
+    Software is a set of machine-readable instructions which directs a processor to perform specific actions.
+  \end{block}
 \end{frame}
 
-\subsection{Processors}
+\section{A Look at Hardware}
 
 \begin{frame}{Processors}
   Three main tasks:
@@ -81,20 +89,105 @@
     \begin{itemize}
     \item<7-> L3 \only<8->{ - 8192KiB shared}
     \item<7-> L2 \only<8->{ -  256KiB per core}
-    \item<7-> L1 \only<8->{ -   64KiB per core}
+    \item<7-> L1 \only<8->{ -   64KiB per core, split between data and instruction}
     \end{itemize}
   \item<9-> Registers
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Processor}
+\begin{frame}{Interconnections}
   \begin{figure}
   \centering
-  \includegraphics[height=0.75\textheight]{Intel-Z170-chipset-block-diagram.jpg}
+  \includegraphics[height=0.7\textheight]{images/Intel-Z170-chipset-block-diagram.jpg}
   \caption{Intel Z170 Chipset Block Diagram}
   \label{fig:intel-z170-chipset}
   \end{figure}
 \end{frame}
+
+\section{Software}
+
+\subsection{Instruction Sets}
+
+\begin{frame}{Instruction Set}
+  \begin{block}{}
+    Every processor has a set of instructions which can be decoded and executed. These instructions map to the hardware which is available on the processor.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Types}
+  \begin{columns}[T]
+  \begin{column}[T]{.45\textwidth}
+    \begin{block}{RISC}
+      All processors have some basic instructions:
+      \begin{itemize}
+        \item Data handling and memory operations
+        \item Arithmetic and logic operations
+        \item Control flow operations
+      \end{itemize}
+    \end{block}
+  \end{column}
+  \pause
+  \begin{column}[T]{.45\textwidth}
+    \begin{block}{CISC}
+      Processors with complex instruction sets may have dedicated hardware for:
+      \begin{itemize}
+        \item Moving chunks of data at once
+        \item Complex mathematical operations (sine, cosine, square root, etc)
+        \item Parallel operations
+        \item Cryptographic functions
+      \end{itemize}
+    \end{block}
+  \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Machine Code}
+  Let's say we want to add the value 5 to the value that is in the register called EAX:\\
+  \pause
+
+  \begin{block}{Machine Code}
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+      \hline
+      \multicolumn{8}{|c|}{01100110100000111100000000000101} \\
+      \hline
+      0110 & 0110 & 1000 & 0011 & 1100 & 0000 & 0000 & 0101 \\
+      \hline
+      6    & 6    & 8    & 3    & c    & 0    & 0    & 5 \\
+      \hline
+      \multicolumn{2}{|c}{66} & \multicolumn{2}{|c}{83} & \multicolumn{2}{|c}{c0} & \multicolumn{2}{|c|}{05} \\
+      \hline
+      \multicolumn{4}{|c}{Add a constant to a word} & \multicolumn{2}{|c}{EAX} & \multicolumn{2}{|c|}{5} \\
+      \hline
+    \end{tabular}
+    \end{center}
+  \end{block}
+
+\end{frame}
+
+\subsection{Assembly Language}
+\begin{frame}[fragile]{Assembly Language}
+  Writing the binary or hex can be done, but it's \emph{really} annoying.\\
+  \pause
+  Enter the Assembler
+  \begin{block}{add.asm}
+    \lstinputlisting[frame=none,language={[x86masm]Assembler}]{code/add.asm}
+  \end{block}
+  \pause
+  More assembler instructions can be found on
+      \href{https://en.wikipedia.org/wiki/X86_instruction_listings}{Wikipedia}
+      or on
+      \href{http://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-instruction-set-reference-manual-325383.pdf}{Intel's Website (pdf)}
+\end{frame}
+
+\begin{frame}[fragile]{}
+  \begin{block}{name.asm}
+    \lstinputlisting[frame=none,language={[x86masm]Assembler}]{code/name.asm}
+  \end{block}
+\end{frame}
+
+\subsection{High-Level Languages}
+
 
 % \begin{frame}
 %   \frametitle{Pictures}
@@ -137,7 +230,9 @@
 %   \end{itemize}
 % \end{frame}
 
-\begin{frame}
-  \frametitle{Questions}
+\section{Questions}
+
+\begin{frame}{Questions}
 \end{frame}
+
 \end{document}
