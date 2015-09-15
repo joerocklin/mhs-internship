@@ -233,50 +233,75 @@ tabsize=2,	                     % sets default tabsize to 2 spaces
   \end{itemize}
 \end{frame}
 
-% \begin{frame}
-%   \frametitle{Pictures}
-%   \begin{figure}[t]
-%     \centering
-%     \subfigure[First Frame]{
-% %    \includegraphics[width=3cm]{figures/naked_leaves/00000001}}
-%     \includegraphics[width=3cm]{lion.png}}
-%     \subfigure[Middle Frame]{
-% %    \includegraphics[width=3cm]{figures/naked_leaves/00000120}}
-%     \includegraphics[width=3cm]{lion.png}}
-%     \subfigure[Last Frame]{
-% %    \includegraphics[width=3cm]{figures/naked_leaves/00000240}}
-%     \includegraphics[width=3cm]{lion.png}}
-%   \end{figure}
-% \end{frame}
-%
-% \begin{frame}
-%   \frametitle{A Movie}
-%   \begin{center}
-%     \movie[height=5cm,width=6.5cm,poster,autostart,loop]{}{leaves.avi}
-%   \end{center}
-%   \begin{itemize}
-%   \item Movies only seem to work in Adobe Reader
-%   \item Movie file is not embedded, it must be on the computer
-%   \end{itemize}
-% \end{frame}
-%
-% % \section{Conclusion} % add these to see outline in slides
-%
-% \begin{frame}
-%   \frametitle{Credits}
-%   \begin{itemize}
-%   \item Brought to you by www.shawnlankton.com
-%   \item Please let me know about improvements!
-%   \item This was supposed to look like a KeyNote Show
-%   \item inspiration: http://www.ucl.ac.uk/~ucbpeal/latexposter.html
-%   \item inspiration: http://newsgroups.derkeiler.com/... (in code)
-%         %http://newsgroups.derkeiler.com/Archive/Comp/comp.text.tex/2007-11/msg00299.html
-%   \end{itemize}
-% \end{frame}
+\subsubsection{Compiled: C}
+\begin{frame}[fragile]{Hello, World C}
+  \lstinputlisting[
+    frame=none,
+    language={C},
+    basicstyle=\tiny
+    ]{code/hello_world.c}
+  \pause
 
-\section{Questions}
+  \begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{images/hello-world-c.png}
+  \caption{Hello World C, Compile, and Run}
+  \label{fig:hello-world-c-output}
+  \end{figure}
+\end{frame}
+
+
+\subsubsection{Interpreted: Ruby}
+\begin{frame}[fragile]{Hello, World Ruby}
+  \lstinputlisting[
+    frame=none,
+    language={C},
+    basicstyle=\tiny
+    ]{code/hello_world.rb}
+  \pause
+
+  \begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{images/hello-world-ruby.png}
+  \caption{Hello World Ruby, Compile, and Run}
+  \label{fig:hello-world-ruby-output}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{More Hello World Examples}
+  \begin{center}
+    There are hundreds more examples at: \\
+    \url{http://rosettacode.org/wiki/Hello_world}
+  \end{center}
+\end{frame}
+
+\section{Wrap-up}
+
+\begin{frame}{Wrapping Up}
+  \begin{itemize}
+    \item Software is just a series of instructions\\Computers are dumb, they just do what we tell them.
+    \item Software comes in many different types and styles\\Each has its strengths and weaknesses
+  \end{itemize}
+\end{frame}
 
 \begin{frame}{Questions}
+\end{frame}
+
+\begin{frame}{Before we meet again}
+  Learn something about a programming language you know nothing about
+  \begin{itemize}
+    \item Use wikipedia, \url{https://en.wikipedia.org/wiki/Portal:Computer_programming} is a good place to start.
+    \item What type of language is it (Low vs. High, compiled vs interpreted)?
+    \item Are there big projects or compabies using it?
+    \item Is there something that makes the language unique? Why would people chose the language?
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Next Time}
+  \begin{itemize}
+    \item This little thing called The Internet
+    \item More about types of software
+  \end{itemize}
 \end{frame}
 
 \end{document}
