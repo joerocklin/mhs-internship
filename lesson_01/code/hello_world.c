@@ -1,9 +1,10 @@
 // Compile with either:
-//   clang hello_world.c -o hello-world-c
+//   clang -o hello-world-c hello_world.c
 //        or
-//   gcc hello_world.c -o hello-world-c
+//   gcc -o hello-world-c hello_world.c
 #include <stdio.h>
 
 int main() {
   printf("Hello, World!\n");
+  return 0;
 }
