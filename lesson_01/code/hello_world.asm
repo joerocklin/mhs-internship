@@ -11,17 +11,16 @@ str:     db 'Hello world!', 0Ah   ; message string with new-line char at the
 str_len: equ $ - str              ; calcs length of string (bytes) by
                                   ; subtracting the str's start address from
                                   ; this address ($ symbol)
-
 section .text       ; this is the code section
 global _start       ; _start is the entry point and needs global scope to be
                     ; 'seen' by the linker - equivalent to main() in C/C++
 _start:             ; definition of _start procedure begins here
-  mov  eax, 4       ; specify the sys_write function code (from OS vector table)
-  mov  ebx, 1       ; specify file descriptor stdout. In gnu/linux, everything's
-                    ; treated as a file, even hardware devices
+  mov  eax, 4       ; use the sys_write function code (from OS vector table)
+  mov  ebx, 1       ; use file descriptor stdout. In gnu/linux,
+                    ; everything's treated as a file, even hardware devices
   mov  ecx, str     ; move start _address_ of string message to ecx register
   mov  edx, str_len ; move length of message (in bytes)
-  int  80h          ; interrupt kernel to perform the system call we just set up.
+  int  80h          ; interrupt kernel to perform the system call
                     ; in gnu/linux services are requested through the kernel
   mov  eax, 1       ; specify sys_exit function code (from OS vector table)
   mov  ebx, 0       ; specify return code for OS (zero indicates all is well)
