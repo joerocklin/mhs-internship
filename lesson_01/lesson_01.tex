@@ -15,6 +15,7 @@
 
 \lstset{ %
 basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+tabsize=2,	                     % sets default tabsize to 2 spaces
 }
 
 \author[Joe Rocklin]{Joe Rocklin\\@joerocklin}
@@ -170,9 +171,7 @@ basicstyle=\footnotesize,        % the size of the fonts that are used for the c
   Writing the binary or hex can be done, but it's \emph{really} annoying.\\
   \pause
   Enter the Assembler
-  \begin{block}{add.asm}
-    \lstinputlisting[frame=none,language={[x86masm]Assembler}]{code/add.asm}
-  \end{block}
+  \lstinputlisting[frame=none,language={[x86masm]Assembler}]{code/add.asm}
   \pause
   More assembler instructions can be found on
       \href{https://en.wikipedia.org/wiki/X86_instruction_listings}{Wikipedia}
@@ -181,9 +180,12 @@ basicstyle=\footnotesize,        % the size of the fonts that are used for the c
 \end{frame}
 
 \begin{frame}[fragile]{}
-  \begin{block}{name.asm}
-    \lstinputlisting[frame=none,language={[x86masm]Assembler}]{code/name.asm}
-  \end{block}
+  \lstinputlisting[
+    frame=none,
+    language={[x86masm]Assembler},
+    basicstyle=\tiny,
+    xleftmargin=-2pt
+    ]{code/name.asm}
 \end{frame}
 
 \subsection{High-Level Languages}
