@@ -18,7 +18,15 @@ basicstyle=\footnotesize,        % the size of the fonts that are used for the c
 tabsize=2,	                     % sets default tabsize to 2 spaces
 }
 
-\author[Joe Rocklin]{Joe Rocklin\\@joerocklin}
+\begin{document}
+
+\author[Joe Rocklin]{
+\begin{tabular}[t]{c c}
+  Joe Rocklin & Tom Rocklin \\
+  joseph.rocklin@siemens.com &  tom.rocklin@siemens.com \\
+  @joerocklin &
+\end{tabular}
+}
 
 \title[Lesson 01\hspace{2em}\insertframenumber/\inserttotalframenumber]{Lesson 01 - What is Software}
 
@@ -26,13 +34,27 @@ tabsize=2,	                     % sets default tabsize to 2 spaces
 
 \institute{Siemens PLM Software}
 
-\begin{document}
-
 \maketitle
 
 \section{Introduction}  % add these to see outline in slides
+\begin{frame}{Tom Rocklin}
+  Tom Rocklin
+  \begin{columns}[T]
+  \begin{column}[T]{.5\textwidth}
+    \begin{itemize}
+    \item Univeristy of Cincinnati\\Mechanical Engineering
+    \item SDRC Coop starting in 1972\\Mechanical Engineering Consulting
+    \item Now doing Software Development
+    \end{itemize}
+  \end{column}
+  \end{columns}
+\end{frame}
 
-\begin{frame}{Introduction}
+\begin{frame}{Siemens}
+  A brief history of how we got to where we are...
+\end{frame}
+
+\begin{frame}{Joe Rocklin}
   Joe Rocklin
   \begin{columns}[T]
   \begin{column}[T]{.5\textwidth}
