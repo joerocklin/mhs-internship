@@ -24,3 +24,6 @@
 *.snm
 *.nav
 *.pdf
+*.vrb
+*.fls
+*.fdb*
