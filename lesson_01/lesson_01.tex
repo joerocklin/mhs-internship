@@ -179,13 +179,21 @@ tabsize=2,	                     % sets default tabsize to 2 spaces
       \href{http://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-software-developer-instruction-set-reference-manual-325383.pdf}{Intel's Website (pdf)}
 \end{frame}
 
-\begin{frame}[fragile]{}
+\begin{frame}[fragile]{Hello, World Assembler}
   \lstinputlisting[
     frame=none,
     language={[x86masm]Assembler},
-    basicstyle=\tiny,
-    xleftmargin=-2pt
-    ]{code/name.asm}
+    basicstyle=\tiny
+    ]{code/hello_world.asm}
+\end{frame}
+
+\begin{frame}[fragile]{Hello, World Assembler Output}
+  \begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{images/hello-world-asm.png}
+  \caption{Hello World Assemble, Link, and Run}
+  \label{fig:hello-world-asm-output}
+  \end{figure}
 \end{frame}
 
 \subsection{High-Level Languages}

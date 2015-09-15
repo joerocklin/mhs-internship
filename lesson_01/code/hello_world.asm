@@ -1,6 +1,6 @@
 ;; This program runs in 32-bit protected mode.
-;  build: nasm -f elf -F stabs name.asm
-;  link:  ld -o name name.o
+;  build: nasm -f elf -F stabs hello_world.asm
+;  link:  ld -o hello-world-asm hello_world.o
 ; In 64-bit long mode you can use 64-bit registers (e.g. rax instead of eax,
 ; rbx instead of ebx, etc.)
 ; Also change "-f elf " for "-f elf64" in build command.
